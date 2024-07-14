@@ -1,0 +1,65 @@
+﻿
+name: create-release
+
+on:
+  push:
+    tags:
+      - 'v*'
+    
+jobs:
+  build:
+    name: create-release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Setup Git Client
+        run: |
+          ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+          git config --global user.email "github-actions@doesnotmatter.dev"
+          git config --global user.name "GitHub Actions"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4.0.1
+        with:
+          dotnet-version: 8.0.303
+          # Authenticates packages to push to GPR
+          source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+        env:
+          NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
+
+      - name: Install dependencies
+        run: dotnet restore ./src/Application/Ladral.Todo.WebApp/Ladral.Todo.WebApp.csproj
+        env:
+          NUGET_AUTH_TOKEN: ${{ github.token }}
+
+      - name: Build
+        run: dotnet publish ./src/Application/Ladral.Todo.WebApp/Ladral.Todo.WebApp.csproj --configuration Release
+
+      - name: Test
+        run: dotnet test ./src/Ladral.ToDo.sln --no-restore --verbosity normal
+
+      # Clone this repository (deploy branch) inside the "deploy" folder
+      # Before clearing out, move .git folder out of the "deploy" folder
+      # Recreate deploy folder, empty
+      # Move .git folder back again
+      # Move publish to deploy folder
+      # Push files to the "deploy" branch
+      - name: Deploy
+        run: |
+          git clone --depth 1 --single-branch -b deploy-webapp git@github.com:${{ github.repository }}.git deploy-webapp
+          mv deploy-webapp/.git deploy-webapp-.git
+          rm -rf deploy-webapp
+          mkdir deploy-webapp
+          mv deploy-webapp-.git deploy-webapp/.git
+          cd deploy-webapp
+          cp -R ../src/Application/Ladral.Todo.WebApp/bin/Release/net8.0/publish .
+          git add .
+          git diff --staged --quiet || git commit -m "Update Artifacts"
+          git push
