@@ -6,13 +6,18 @@ on:
       - main
 
 jobs:
-  release:
-    name: Semantic Release
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Semantic Release
-        uses: hennejg/github-tag-action@v4.3.1
+      - uses: actions/checkout@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: '0'
+
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: false
+
