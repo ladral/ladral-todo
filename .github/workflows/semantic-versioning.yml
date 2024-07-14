@@ -1,4 +1,4 @@
-﻿name: Semantic Release and Tagging
+﻿name: Semantic Versioning and Tagging
 
 on:
   push:
@@ -13,4 +13,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v4
+        uses: hennejg/github-tag-action@v4.3.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
