@@ -22,6 +22,7 @@ jobs:
           ssh-keyscan -H github.com >> ~/.ssh/known_hosts
           git config --global user.email "github-actions@doesnotmatter.dev"
           git config --global user.name "GitHub Actions"
+          
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -45,6 +46,10 @@ jobs:
       - name: Test
         run: dotnet test ./src/Ladral.ToDo.sln --no-restore --verbosity normal
 
+
+      - name: Set release version name
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+        
       # Clone this repository (deploy branch) inside the "deploy" folder
       # Before clearing out, move .git folder out of the "deploy" folder
       # Recreate deploy folder, empty
@@ -61,5 +66,5 @@ jobs:
           cd deploy-webapp
           cp -R ../src/Application/Ladral.Todo.WebApp/bin/Release/net8.0/publish .
           git add .
-          git diff --staged --quiet || git commit -m "$(git describe --tags --abbrev=0)"
+          git diff --staged --quiet || git commit -m "relese: ${{ env.RELEASE_VERSION }}"
           git push
