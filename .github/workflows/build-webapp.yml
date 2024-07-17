@@ -2,8 +2,9 @@
 name: create-release
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'v*'
     
 jobs:
   build:
