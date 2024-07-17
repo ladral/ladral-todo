@@ -61,5 +61,5 @@ jobs:
           cd deploy-webapp
           cp -R ../src/Application/Ladral.Todo.WebApp/bin/Release/net8.0/publish .
           git add .
-          git diff --staged --quiet || git commit -m "Update Artifacts"
+          git diff --staged --quiet || git commit -m "$(git describe --tags --abbrev=0)"
           git push
