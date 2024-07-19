@@ -20,7 +20,7 @@ jobs:
       - name: Setup Git Client
         run: |
           ssh-keyscan -H github.com >> ~/.ssh/known_hosts
-          git config --global user.email "github-actions@doesnotmatter.dev"
+          git config --global user.email "github-actions@ladral.dev"
           git config --global user.name "GitHub Actions"
           
       - name: Checkout
