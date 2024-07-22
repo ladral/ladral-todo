@@ -1,0 +1,12 @@
+﻿services:
+  ladral.todo.webapp:
+    image: ladral.todo.webapp
+    build:
+      context: .
+      dockerfile: Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp/Dockerfile
+
+  ladral.todo.webapp.client:
+    image: ladral.todo.webapp.client
+    build:
+      context: .
+      dockerfile: Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.Client/Dockerfile
