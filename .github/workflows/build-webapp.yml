@@ -64,7 +64,7 @@ jobs:
           mkdir deploy-webapp
           mv deploy-webapp-.git deploy-webapp/.git
           cd deploy-webapp
-          cp -R ../src/Application\Ladral.ToDo.WebApp\Ladral.ToDo.WebApp\bin\Release\net8.0\publish\ .
+          cp -R ../src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp/bin/Release/net8.0/publish .
           git add .
           git diff --staged --quiet || git commit -m "relese: ${{ env.RELEASE_VERSION }}"
           git push
