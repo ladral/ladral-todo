@@ -41,7 +41,7 @@ jobs:
           NUGET_AUTH_TOKEN: ${{ github.token }}
 
       - name: Build
-        run: dotnet publish ./src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.csproj --configuration Release -r linux-x64
+        run: dotnet publish ./src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.csproj --configuration Release
 
       - name: Test
         run: dotnet test ./src/Ladral.ToDo.sln --no-restore --verbosity normal
@@ -64,7 +64,7 @@ jobs:
           mkdir deploy-webapp
           mv deploy-webapp-.git deploy-webapp/.git
           cd deploy-webapp
-          cp -R ../src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp/bin/Release/net8.0/linux-x64/publish .
+          cp -R ../src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp/bin/Release/net8.0/publish .
           git add .
           git diff --staged --quiet || git commit -m "relese: ${{ env.RELEASE_VERSION }}"
           git push
