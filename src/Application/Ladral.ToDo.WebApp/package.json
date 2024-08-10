@@ -1,0 +1,13 @@
+{
+  "name": "ladral.todo.webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "node-sass --watch Ladral.ToDo.WebApp/ -o Ladral.ToDo.WebApp/",
+    "sass:build": "node-sass Ladral.ToDo.WebApp/ -o Ladral.ToDo.WebApp/"
+  },
+  "author": "ladral",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
