@@ -1,0 +1,74 @@
+/* ----------------------------------------------------------------------------------- */
+/* Reusable utility ('.u-[...]') classes */
+/* ----------------------------------------------------------------------------------- */
+
+.u-h-auto {
+  height: auto;
+}
+
+.u-w-auto {
+  width: auto;
+}
+
+.u-h-100 {
+  height: 100%;
+}
+
+.u-w-100 {
+  width: 100%;
+}
+
+.u-min-h-0 {
+  min-height: 0;
+}
+
+.u-min-w-0 {
+  min-width: 0;
+}
+
+.u-max-h-100 {
+  max-height: 100%;
+}
+
+.u-max-w-100 {
+  max-width: 100%;
+}
+
+.u-overflow-auto {
+  overflow: auto;
+}
+
+.u-overflow-hidden {
+  overflow: hidden;
+}
+
+.u-text-truncate {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.u-no-scroll {
+  overflow: hidden;
+}
+
+.u-opacity-0 {
+  opacity: 0;
+}
+
+.u-opacity-1 {
+  opacity: 1;
+}
+
+@supports (-webkit-line-clamp: 1) {
+  .u-text-truncate-multiline {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--lines);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+  }
+}
+
+

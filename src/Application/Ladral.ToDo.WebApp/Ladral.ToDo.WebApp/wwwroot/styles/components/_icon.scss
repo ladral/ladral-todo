@@ -1,0 +1,13 @@
+.icon {
+  --_icon-Fill: var(--icon-Fill, currentColor);
+  --_icon-Display: var(--icon-Display, block);
+  --_icon-Height: var(--icon-Height, 2em);
+  --_icon-Width: var(--icon-Width, 2em);
+  --_icon-VerticalAlign: var(--icon-VerticalAlign, middle);
+
+  fill: var(--_icon-Fill);
+  display: var(--_icon-Display);
+  height: var(--_icon-Height);
+  width: var(--_icon-Width);
+  vertical-align: var(--_icon-VerticalAlign);
+}

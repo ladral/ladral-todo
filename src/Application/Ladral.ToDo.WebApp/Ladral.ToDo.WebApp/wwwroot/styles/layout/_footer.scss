@@ -1,0 +1,10 @@
+@use "../abstracts/functions" as fx;
+@use "sass:color";
+
+.footer {
+  --_footer-Padding: var(--footer-Padding, 1rem 0);
+
+  padding: var(--_footer-Padding);
+  color: fx.getOnColor(grey, 900);
+  background-color: fx.getColor(grey, 900);
+}

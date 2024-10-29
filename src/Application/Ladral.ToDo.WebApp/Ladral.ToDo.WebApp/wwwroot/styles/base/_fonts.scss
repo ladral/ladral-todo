@@ -1,0 +1,80 @@
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url("../fonts/figtree/Figtree-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: italic;
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url("../fonts/figtree/Figtree-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
+
+/* Design system adopted classes */
+/* ---------------------------------------------------------------------------------------------- */
+
+/* Text 050 */
+.text-050 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* Text 100 */
+.text-100 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* Text 100 Bold */
+.text-100-bold {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+/* Text 200 */
+.text-200{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+/* Text 200 Bold */
+.text-200-bold {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+/* Text 300 */
+.text-300 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+/* Text 300 Bold */
+.text-300-bold {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+/* Text 400 */
+.text-400 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+/* Text 400 Bold */
+.text-400-bold {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 700;
+}
