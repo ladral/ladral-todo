@@ -1,12 +1,18 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu/>
-    </div>
+<div class="page u-h-100 is-flex is-flex-direction-column">
+    <header class="header is-flex">
+        <div class="">
+            <div>ladral TODO</div>
+        </div>
+    </header>
+    <main class="is-flex-grow-1 is-flex is-flex-direction-row">
 
-    <main>
-        <article class="content px-4">
+        <aside class="sidebar">
+            <NavMenu/>
+        </aside>
+        
+        <article class="container px-4">
             @Body
         </article>
     </main>

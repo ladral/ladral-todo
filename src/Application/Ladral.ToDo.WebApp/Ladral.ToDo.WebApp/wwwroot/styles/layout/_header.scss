@@ -4,13 +4,11 @@
   --_header-ZIndex: var(--header-ZIndex, 20);
   --_header-Padding: var(--footer-Padding, 1rem 0);
   --_header-BoxShadow: var(--header-BoxShadow, 0 0.125rem 1rem #{fx.getColor(grey, 900)});
-
-  opacity: 0;
-
+  
   z-index: var(--_header-ZIndex);
   padding: var(--_header-Padding);
   box-shadow: var(--_header-BoxShadow);
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   color: fx.getOnColor(grey, 600);
