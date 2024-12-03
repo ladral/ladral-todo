@@ -6,7 +6,7 @@ on:
     tags:
       - 'v*'
     
-jobs:git pu
+jobs:
   build:
     name: create-release
     runs-on: ubuntu-latest
