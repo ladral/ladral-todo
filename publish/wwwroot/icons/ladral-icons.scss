@@ -1,0 +1,114 @@
+/*
+    LADRAL ICONS
+    Collection of ladral icons using Remix library
+ */
+
+/*
+* https://remixicon.com
+* https://github.com/Remix-Design/RemixIcon
+* Copyright RemixIcon.com
+* Released under the Apache License Version 2.0
+*/
+
+/*
+    ICON SOURCES
+    Here are linked the font files. Mostly you don't need to update this.
+    In some rare cases a browser tries to load an older (cached) version of the font files,
+    to prevent this please add an updated timestamp (https://timestampgenerator.com) as '^Version', see the 't' parameter.
+ */
+
+@font-face {
+    font-family: "remixicon";
+    src: url('icons/remixicon/remixicon.eot?t=1681155421 '); /* IE9*/
+    src: url('icons/remixicon/remixicon.eot?t=1681155421 #iefix') format('embedded-opentype'), /* IE6-IE8 */ url("remixicon/remixicon.woff2?t=1681155421 ") format("woff2"),
+    url("icons/remixicon/remixicon.woff?t=1681155421 ") format("woff"),
+    url('icons/remixicon/remixicon.ttf?t=1681155421 ') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('remixicon/remixicon.svg?t=1681155421 #remixicon') format('svg'); /* iOS 4.1- */
+    font-display: swap;
+}
+
+[class^="dral-icon-"],
+[class*="dral-icon-"] {
+    font-family: "remixicon" !important;
+    font-style: normal;
+    font-weight: normal;
+    speak: never;
+    display: block;
+    text-decoration: inherit;
+    width: auto;
+    text-align: center;
+
+    /* For safety - reset parent styles, that can break glyph codes */
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix remix icon v3 breaking change */
+    line-height: 0.725em;
+
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="dral-icon-"]:before,
+[class*="dral-icon-"]:before {
+
+    /* fix remix icon v3 breaking change */
+    display: inline-flex;
+    vertical-align: 0.275em;
+}
+
+/*
+    ICON MAPPING
+    If you need to update icons, this is your section.
+    The comment above the icon style is a reference to the original naming, for easier mapping.
+ */
+
+/*.ri-task-line:before { content: "\f1e8"; }*/
+.dral-icon-task-line:before {
+    content: "\f1e8";
+}
+
+/*.ri-todo-line:before { content: "\f217"; }*/
+.dral-icon-todo-line:before {
+    content: "\f217";
+}
+
+/*.ri-todo-fill:before { content: "\f216"; }*/
+.dral-icon-todo-fill:before {
+    content: "\f216";
+}
+
+/*.ri-task-fill:before { content: "\f1e7"; }*/
+.dral-icon-task-fill:before {
+    content: "\f1e7";
+}
+
+/*.ri-home-line:before { content: "\ee2b"; }*/
+.dral-icon-home-line:before {
+    content: "\ee2b";
+}
+
+/*.ri-home-fill:before { content: "\ee26"; }*/
+.dral-icon-home-fill:before {
+    content: "\ee26";
+}
+
+/*.ri-cloud-line:before { content: "\eb9d"; }*/
+.dral-icon-cloud-line:before {
+    content: "\eb9d";
+}
+
+/*.ri-cloud-off-line:before { content: "\eb9f"; }*/
+.dral-icon-cloud-off-line:before {
+    content: "\eb9f";
+}
+
+/*.ri-cloud-fill:before { content: "\eb9c"; }*/
+.dral-icon-cloud-fill:before {
+    content: "\eb9c";
+}
+
+/*.ri-cloud-off-fill:before { content: "\eb9e"; }*/
+.dral-icon-cloud-off-fill:before {
+    content: "\eb9e";
+}

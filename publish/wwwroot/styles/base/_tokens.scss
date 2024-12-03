@@ -1,0 +1,18 @@
+@use "../abstracts/functions" as fx;
+
+:root {
+
+  /* shadow - tokens for hover animation */
+  --token-shadow:
+          0 2px 18px 5px #{fx.getColor(grey, 600)},
+          0 20px 20px -15px #{fx.getColor(grey, 600)};
+
+  --token-ring-shadow: 0px 0px 25px 0px;
+
+  --token-transition: ease-in-out 0.3s;
+
+
+  /* outlines */
+  --token-outline: 2px solid #{fx.getPrimaryColor()};
+
+}

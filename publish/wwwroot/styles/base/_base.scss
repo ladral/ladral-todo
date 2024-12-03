@@ -1,0 +1,31 @@
+@use "../abstracts/functions" as fx;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dral-bg-color: #{fx.getColor(grey, 800)};
+  --dral-on-bg-color: #{fx.getOnColor(grey, 800)};
+  --dral-transparent: rgba(55, 65, 81, 0.6);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body,
+button,
+input,
+optgroup,
+select,
+textarea{
+  font-size: 100%;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 400;
+  background-color: var(--dral-bg-color);
+  color: var(--dral-on-bg-color);
+}

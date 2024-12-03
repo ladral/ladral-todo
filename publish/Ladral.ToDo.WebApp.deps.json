@@ -228,7 +228,10 @@
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.7"
         },
         "runtime": {
-          "Ladral.ToDo.WebApp.Client.dll": {}
+          "Ladral.ToDo.WebApp.Client.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
