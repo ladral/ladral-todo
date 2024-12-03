@@ -3,7 +3,7 @@
 /* Color Defaults */
 $color-primary:  rgb(110, 231, 183) !default;
 $color-secondary: rgb(59, 130, 246) !default;
-$color-text-light: rgb(31, 41, 55) !default;
+$color-text-light: rgb(229, 229, 229)!default;
 
 $COLOR-MAPS: (
         primary: (
@@ -32,19 +32,19 @@ $COLOR-MAPS: (
         ),
         grey: (
                 900: (
-                        light: rgb(13, 18, 28),
-                        on-light: $color-text-light
-                ),
-                800: (
                         light: rgb(17, 24, 39),
                         on-light: $color-text-light
                 ),
-                700: (
+                800: (
                         light: rgb(31, 41, 55),
                         on-light: $color-text-light
                 ),
+                700: (
+                        light: rgb(53, 63, 77),
+                        on-light: $color-text-light
+                ),
                 600: (
-                        light: rgb(55, 65, 81),
+                        light: rgb(75, 85, 99),
                         on-light: $color-text-light
                 )
         )

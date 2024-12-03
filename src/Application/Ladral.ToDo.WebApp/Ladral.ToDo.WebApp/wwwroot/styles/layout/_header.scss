@@ -11,7 +11,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  color: fx.getOnColor(grey, 600);
-  background-color: var(--dral-transparent, rgba(55, 65, 81, 0.6));
+  color: fx.getOnColor(grey, 800);
+  background-color: var(--dral-bg-color, rgba(55, 65, 81, 0.6));
   backdrop-filter: blur(5px);
 }
