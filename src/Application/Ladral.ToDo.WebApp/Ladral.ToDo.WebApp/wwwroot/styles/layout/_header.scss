@@ -2,7 +2,7 @@
 
 .header {
   --_header-ZIndex: var(--header-ZIndex, 20);
-  --_header-Padding: var(--footer-Padding, 1rem 0);
+  --_header-Padding: var(--footer-Padding, 1rem 1rem);
   --_header-BoxShadow: var(--header-BoxShadow, 0 0.125rem 1rem #{fx.getColor(grey, 900)});
   
   z-index: var(--_header-ZIndex);
