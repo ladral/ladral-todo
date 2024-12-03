@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "./variables" as var;
+
+/* @return var(--color-primary, rgb(242, 2, 242)); */
+@function getPrimaryColor() {
+  $color: var(--color-primary, #{map-get-color-strict(primary, 800, 'light')});
+  @return $color;
+}
+
+/* @return var(--color-grey-800, rgb(17, 24, 39); */
+@function getColor($name: grey, $step: 800) {
+    $color: var(--color-#{$name}-#{$step}, #{map-get-color-strict($name, $step, 'light')});
+    @return $color;
+}
+
+@function getOnColor($name: grey, $step: 800) {
+  $color: var(--color-on-#{$name}-#{$step}, #{map-get-color-strict($name, $step, 'on-light')});
+  @return $color;
+}
+
+@function map-get-color-strict($name, $step, $theme) {
+  @if map.has-key(var.$COLOR-MAPS, $name, $step, $theme) {
+    @return map.get(var.$COLOR-MAPS, $name, $step, $theme);
+  } @else {
+    @error "ERROR: Specified key does not exist in the color mapping";
+  }
+}
+
+/* @return var(--token-transition, ease-in-out 0.3s; */
+@function getToken($type) {
+  $token: var(--token-#{$type}, #{map-get-token-strict($type)});
+  @return $token;
+}
+
+@function map-get-token-strict($type) {
+  @if map.has-key(var.$TOKEN-MAP, $type) {
+    @return map.get(var.$TOKEN-MAP, $type);
+  } @else {
+    @error "ERROR: Specified token does not exist in the token mapping";
+  }
+}

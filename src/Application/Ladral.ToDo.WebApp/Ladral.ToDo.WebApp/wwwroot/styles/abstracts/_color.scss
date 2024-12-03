@@ -1,0 +1,21 @@
+@use "variables" as var;
+
+:root {
+  /* Colors: Primary */
+  --color-secondary-800: #{var.$color-secondary};
+  --color-primary-800: #{var.$color-primary};
+  --color-primary: var(--color-primary-800);
+
+  /* Colors: Black */
+  --color-black: rgba(0, 0, 0, 1);
+
+  /* Colors: Gray */
+  --color-grey-600: rgb(75, 85, 99);
+  --color-grey-700: rgb(53, 63, 77);
+  --color-grey-800: rgb(31, 41, 55);
+  --color-grey-900: rgb(17, 24, 39);
+ 
+
+  /* Colors: Text */
+  --color-text-light: rgb(31, 41, 55);
+}

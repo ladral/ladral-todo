@@ -1,0 +1,76 @@
+@use "sass:map";
+
+/* Color Defaults */
+$color-primary:  rgb(110, 231, 183) !default;
+$color-secondary: rgb(59, 130, 246) !default;
+$color-text-light: rgb(229, 229, 229)!default;
+
+$COLOR-MAPS: (
+        primary: (
+                800: (
+                        light: $color-primary,
+                        on-light: $color-text-light
+                )
+        ),
+        secondary: (
+                800: (
+                        light: $color-secondary,
+                        on-light: $color-text-light
+                )
+        ),
+        black: (
+                800: (
+                        light: black,
+                        on-light: $color-text-light
+                )
+        ),
+        white: (
+                800: (
+                        light: rgb(230, 236, 245),
+                        on-light: $color-text-light
+                )
+        ),
+        grey: (
+                900: (
+                        light: rgb(17, 24, 39),
+                        on-light: $color-text-light
+                ),
+                800: (
+                        light: rgb(31, 41, 55),
+                        on-light: $color-text-light
+                ),
+                700: (
+                        light: rgb(53, 63, 77),
+                        on-light: $color-text-light
+                ),
+                600: (
+                        light: rgb(75, 85, 99),
+                        on-light: $color-text-light
+                )
+        )
+);
+
+$TOKEN-MAP: (
+  /*
+    shadow - tokens for hover animation
+  */
+        shadow:(
+                inset 0 1px 0 0 map.get($COLOR-MAPS, grey, 600, light),
+                0 2px 3px map.get($COLOR-MAPS, grey, 900, light),
+                0 8px 8px map.get($COLOR-MAPS, grey, 900, light)
+        ),
+        ring-shadow: 0px 0px 25px 0px,
+        transition: 0.3s,
+        transition-slow: 0.5s,
+        transition-super-slow: ease-in-out 4s,
+        transition-timing-function: ease-in-out,
+        drop-shadow-filter: drop-shadow(1px 1px 1.5px rgb(0 0 0 / 0.4)),
+  /*
+    outlines
+  */
+        outline: 2px solid map.get($COLOR-MAPS, primary, 800, light)
+);
+
+/* Container */
+$container-width: 75rem !default;
+$container-padding-horizontal: 2rem !default;
