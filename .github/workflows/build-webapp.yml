@@ -34,6 +34,10 @@ jobs:
       - name: Install npm dependencies
         run: npm install
         working-directory: ./src/Application/Ladral.ToDo.WebApp
+        
+      - name: Compile sass files
+        run: npm run sass:build
+        working-directory: ./src/Application/Ladral.ToDo.WebApp        
       
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4.0.1
