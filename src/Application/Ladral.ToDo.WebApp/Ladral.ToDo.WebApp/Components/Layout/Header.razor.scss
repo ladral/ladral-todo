@@ -1,4 +1,5 @@
 ﻿@use "../../wwwroot/styles/abstracts/functions" as fx;
+@use "../../wwwroot/styles/abstracts/size" as *;
 
 .header {
   --_header-ZIndex: var(--header-ZIndex, 20);
@@ -14,3 +15,85 @@
   color: fx.getOnColor(grey, 800);
   background-color: var(--dral-bg-color, rgba(55, 65, 81, 0.6));
 }
+
+.header__logo {
+  display: none;
+}
+
+
+label.navbar-toggler__icon {
+  --_navbar-toggler__icon-ZIndex: var(--navbar-toggler__icon-ZIndex, 30);
+
+  z-index: var(--_navbar-toggler__icon-ZIndex);
+  display: block;
+  position: relative;
+  background: #{fx.getColor(grey, 600)};
+  width: 45px;
+  height: 35px;
+  margin-right: auto;
+  margin-bottom: auto;
+  border-radius: 4px;
+}
+
+input#navbar-toggler__checkbox {
+  display:none
+}
+
+.navbar-toggler__icon-line {
+  position: absolute;
+  left:10px;
+  height: 2px; width: 25px;
+  background: #fff; border-radius: 1px;
+  display: block;
+  transition: 0.4s;
+  transform-origin: center;
+}
+
+.navbar-toggler__icon-line:nth-child(1) {
+  top: 8px;
+}
+
+.navbar-toggler__icon-line:nth-child(2) {
+  top: 16px;
+}
+
+.navbar-toggler__icon-line:nth-child(3) {
+  top: 24px;
+}
+
+#navbar-toggler__checkbox:checked + .navbar-toggler__icon .navbar-toggler__icon-line:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+}
+
+#navbar-toggler__checkbox:checked + .navbar-toggler__icon .navbar-toggler__icon-line:nth-child(2) {
+  opacity:0;
+}
+
+#navbar-toggler__checkbox:checked + .navbar-toggler__icon .navbar-toggler__icon-line:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+}
+
+#navbar-toggler__checkbox:checked ~ .navbar-toggler__navbar ::deep .navbar {
+  display: block;
+}
+
+
+@media (min-width: $breakpoint-xs) {
+  .navbar-toggler {
+    display: none;
+  }
+
+  .header__logo {
+    display: block;
+  }
+  
+  .navbar {
+    /* Never collapse the sidebar for wide screens */
+    display: block;
+
+    /* Allow sidebar to scroll for tall menus */
+    height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+  }
+}
+
