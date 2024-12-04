@@ -1,0 +1,150 @@
+/* _content/Ladral.ToDo.WebApp/Components/Layout/Header.razor.rz.scp.css */
+/* Color Defaults */
+/* Container */
+/* @return var(--color-primary, rgb(242, 2, 242)); */
+/* @return var(--color-grey-800, rgb(17, 24, 39); */
+/* @return var(--token-transition, ease-in-out 0.3s; */
+.header[b-kk4jroyozg] {
+  --_header-ZIndex: var(--header-ZIndex, 20);
+  --_header-Padding: var(--footer-Padding, 1rem 1rem);
+  --_header-BoxShadow: var(--header-BoxShadow, 0 0.0625rem 1rem var(--color-grey-900, rgb(17, 24, 39)));
+  z-index: var(--_header-ZIndex);
+  padding: var(--_header-Padding);
+  box-shadow: var(--_header-BoxShadow);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  color: var(--color-on-grey-800, rgb(229, 229, 229));
+  background-color: var(--dral-bg-color, rgba(55, 65, 81, 0.6));
+}
+
+/*# sourceMappingURL=Header.razor.css.map */
+/* _content/Ladral.ToDo.WebApp/Components/Layout/MainLayout.razor.rz.scp.css */
+/* Color Defaults */
+/* Container */
+/* @return var(--color-primary, rgb(242, 2, 242)); */
+/* @return var(--color-grey-800, rgb(17, 24, 39); */
+/* @return var(--token-transition, ease-in-out 0.3s; */
+#blazor-error-ui[b-t1kgfov2u2] {
+  background: lightyellow;
+  bottom: 0;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+  display: none;
+  left: 0;
+  padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+#blazor-error-ui .dismiss[b-t1kgfov2u2] {
+  cursor: pointer;
+  position: absolute;
+  right: 0.75rem;
+  top: 0.5rem;
+}
+
+/*# sourceMappingURL=MainLayout.razor.css.map */
+/* _content/Ladral.ToDo.WebApp/Components/Layout/NavMenu.razor.rz.scp.css */
+/* Color Defaults */
+/* Container */
+/* @return var(--color-primary, rgb(242, 2, 242)); */
+/* @return var(--color-grey-800, rgb(17, 24, 39); */
+/* @return var(--token-transition, ease-in-out 0.3s; */
+.navbar-toggler[b-t57kiqfyif] {
+  appearance: none;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 2.5rem;
+  color: white;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler:checked[b-t57kiqfyif] {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.top-row[b-t57kiqfyif] {
+  height: 3.5rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.navbar-brand[b-t57kiqfyif] {
+  font-size: 1.1rem;
+}
+
+.nav-item[b-t57kiqfyif] {
+  font-size: 0.9rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav-item:first-of-type[b-t57kiqfyif] {
+  padding-top: 1rem;
+}
+
+.nav-item:last-of-type[b-t57kiqfyif] {
+  padding-bottom: 1rem;
+  text-decoration: none;
+}
+
+.nav-link-icon[b-t57kiqfyif] {
+  --_nav-link-icon-Fill: var(--nav-link-icon-Fill, currentColor);
+  --_nav-link-icon-LineHeight: var(--nav-link-icon-LineHeight, 1em);
+  --_nav-link-icon-FontSize: var(--nav-link-icon-FontSize, 2rem);
+  --_nav-link-icon-MarginRight: var(--nav-link-icon-MarginRight, 0.75rem);
+  fill: var(--_nav-link-icon-Fill);
+  line-height: var(--_nav-link-icon-LineHeight);
+  font-size: var(--_nav-link-icon-FontSize);
+  height: var(--_nav-link-icon-FontSize);
+  width: var(--_nav-link-icon-FontSize);
+  margin-right: var(--_nav-link-icon-MarginRight);
+}
+
+.nav-item[b-t57kiqfyif]  .nav-link {
+  color: var(--color-on-primary-800, rgb(229, 229, 229));
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  line-height: 3rem;
+  width: 100%;
+}
+
+.nav-item[b-t57kiqfyif]  a.active {
+  color: var(--color-primary, rgb(110, 231, 183));
+}
+
+.nav-item[b-t57kiqfyif]  .nav-link:hover {
+  background-color: var(--color-gray-700, rgb(53, 63, 77));
+}
+
+.nav-scrollable[b-t57kiqfyif] {
+  display: none;
+}
+
+.navbar-toggler:checked ~ .nav-scrollable[b-t57kiqfyif] {
+  display: block;
+}
+
+@media (min-width: 641px) {
+  .navbar-toggler[b-t57kiqfyif] {
+    display: none;
+  }
+  .nav-scrollable[b-t57kiqfyif] {
+    /* Never collapse the sidebar for wide screens */
+    display: block;
+    /* Allow sidebar to scroll for tall menus */
+    height: calc(100vh - 3.5rem);
+    overflow-y: auto;
+  }
+}
+
+/*# sourceMappingURL=NavMenu.razor.css.map */
