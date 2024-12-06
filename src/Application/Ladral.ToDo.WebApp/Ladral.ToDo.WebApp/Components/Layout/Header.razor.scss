@@ -6,11 +6,10 @@ $navbar-toggler-height: 35px;
 .header {
   --_header-ZIndex: var(--header-ZIndex, 20);
   --_header-Padding: var(--header-Padding, 1rem 0);
-  --_header-BoxShadow: var(--header-BoxShadow, 0 0.0625rem 1rem #{fx.getColor(grey, 900)});
 
   z-index: var(--_header-ZIndex);
   padding: var(--_header-Padding);
-  box-shadow: var(--_header-BoxShadow);
+  box-shadow: fx.getToken(shadow);
   position: sticky;
   top: 0;
   width: 100%;
@@ -23,7 +22,6 @@ $navbar-toggler-height: 35px;
 }
 
 .navbar-toggler {
-  display: block;
   height: $navbar-toggler-height;
   margin-right: 1rem;
   margin-left: auto;
@@ -39,8 +37,6 @@ label.navbar-toggler__icon {
   background: #{fx.getColor(grey, 600)};
   width: 45px;
   height: $navbar-toggler-height;
-  margin-right: auto;
-  margin-bottom: auto;
   border-radius: 4px;
 }
 
@@ -88,15 +84,16 @@ input#navbar-toggler__checkbox {
 }
 
 .navbar-toggler__navbar ::deep .navbar {
-  --_navbar-toggler__navbar-BoxShadow: var(--navbar-toggler__navbar-BoxShadow, 0 0.0625rem 1rem var(--color-grey-900, rgb(17, 24, 39)));
+  --_navbar-toggler__navbar-Transform: var(--navbar-toggler__navbar-Transform, translatey(-125%));
   
   background-color: var(--dral-bg-color, rgba(55, 65, 81, 0.6));
-  box-shadow: var(--_navbar-toggler__navbar-BoxShadow);
+  box-shadow: #{fx.getToken(shadow)};;
   display: block;
   position: fixed;
   top: 0;
-  transform: translatey(-130%);
-  transition: transform .8s cubic-bezier(.52,.16,.04,1);
+  transform: var(--_navbar-toggler__navbar-Transform);
+  transition: #{fx.getToken(transition)};
+  transition-property: transform;
   width: 100vw;
   
 }
