@@ -1,9 +1,11 @@
 ﻿@use "../../wwwroot/styles/abstracts/functions" as fx;
 @use "../../wwwroot/styles/abstracts/size" as *;
 
+$navbar-toggler-height: 35px;
+
 .header {
   --_header-ZIndex: var(--header-ZIndex, 20);
-  --_header-Padding: var(--footer-Padding, 1rem 1rem);
+  --_header-Padding: var(--header-Padding, 1rem 0);
   --_header-BoxShadow: var(--header-BoxShadow, 0 0.0625rem 1rem #{fx.getColor(grey, 900)});
 
   z-index: var(--_header-ZIndex);
@@ -20,6 +22,13 @@
   display: none;
 }
 
+.navbar-toggler {
+  display: block;
+  height: $navbar-toggler-height;
+  margin-right: 1rem;
+  margin-left: auto;
+}
+
 
 label.navbar-toggler__icon {
   --_navbar-toggler__icon-ZIndex: var(--navbar-toggler__icon-ZIndex, 30);
@@ -29,7 +38,7 @@ label.navbar-toggler__icon {
   position: relative;
   background: #{fx.getColor(grey, 600)};
   width: 45px;
-  height: 35px;
+  height: $navbar-toggler-height;
   margin-right: auto;
   margin-bottom: auto;
   border-radius: 4px;
@@ -73,27 +82,45 @@ input#navbar-toggler__checkbox {
   transform: translateY(-8px) rotate(45deg);
 }
 
-#navbar-toggler__checkbox:checked ~ .navbar-toggler__navbar ::deep .navbar {
+.sidebar {
+  position: fixed;
+  left: 0;
+}
+
+.navbar-toggler__navbar ::deep .navbar {
+  --_navbar-toggler__navbar-BoxShadow: var(--navbar-toggler__navbar-BoxShadow, 0 0.0625rem 1rem var(--color-grey-900, rgb(17, 24, 39)));
+  
+  background-color: var(--dral-bg-color, rgba(55, 65, 81, 0.6));
+  box-shadow: var(--_navbar-toggler__navbar-BoxShadow);
   display: block;
+  position: fixed;
+  top: 0;
+  transform: translatey(-130%);
+  transition: transform .8s cubic-bezier(.52,.16,.04,1);
+  width: 100vw;
+  
+}
+
+#navbar-toggler__checkbox:checked ~ .navbar-toggler__navbar ::deep .navbar {
+  transform: translatey(0);
 }
 
 
 @media (min-width: $breakpoint-xs) {
+  .header {
+    --header-Padding: 1rem 1rem;
+  }
+  
   .navbar-toggler {
+    display: none;
+  }
+  
+  .navbar-toggler__navbar ::deep .navbar {
     display: none;
   }
 
   .header__logo {
     display: block;
-  }
-  
-  .navbar {
-    /* Never collapse the sidebar for wide screens */
-    display: block;
-
-    /* Allow sidebar to scroll for tall menus */
-    height: calc(100vh - 3.5rem);
-    overflow-y: auto;
   }
 }
 
