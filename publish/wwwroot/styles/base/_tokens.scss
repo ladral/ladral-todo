@@ -4,13 +4,11 @@
 
   /* shadow - tokens for hover animation */
   --token-shadow:
-          0 2px 18px 5px #{fx.getColor(grey, 600)},
-          0 20px 20px -15px #{fx.getColor(grey, 600)};
-
+          0 0.0625rem 1rem #{fx.getColor(grey, 900)};
+  
   --token-ring-shadow: 0px 0px 25px 0px;
 
-  --token-transition: ease-in-out 0.3s;
-
+  --token-transition: .8s cubic-bezier(.52,.16,.04,1);
 
   /* outlines */
   --token-outline: 2px solid #{fx.getPrimaryColor()};
