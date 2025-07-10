@@ -160,11 +160,6 @@ input#navbar-toggler__checkbox[b-kk4jroyozg] {
 /** 768px or smaller */
 /** 576px or smaller */
 /** 400px or smaller */
-.top-row[b-t57kiqfyif] {
-  height: 3.5rem;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
 .navbar-brand[b-t57kiqfyif] {
   font-size: 1.1rem;
 }
