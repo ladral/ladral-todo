@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Ladral.ToDo.WebApp.Client",
   "resources": {
-    "hash": "sha256-Zlg818UP0Io2jsSJ7h8FQVkOb9e+wWlSAxwGLTvXGLA=",
+    "hash": "sha256-GhmBe0LAQDtsGzSsdeZwRre/xjAZyiaoIXAu5WPNT2s=",
     "jsModuleNative": {
       "dotnet.native.8.0.11.n1sf6xr5tz.js": "sha256-VdKq87/z5NIxZKmuM+fv38XF+RcEb/bg3jVBwQSfwP4="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "Ladral.ToDo.WebApp.Client.wasm": "sha256-RdwrhLdGCDnsOLx0kpjbc127+wGNQCu7mtJzGJ7Fc2w=",
+      "Ladral.ToDo.WebApp.Client.wasm": "sha256-tpUZsrCPUVi8dHJkTtd6dj783cRHg120pHL9ZGYjuLc=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-GEAgDE9Y0Bw0mHDKlfIVJyx6u8zyzFr0AkMHyKj+HXY=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-+K0nLK4KI10D9aT7W1pwiLjbjqmhDJteOna2nuY76io=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-zxvL0VHz+m0PcuJuyl5vVDQQfX/xwth8SJD/cYPtvl8=",
