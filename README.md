@@ -31,8 +31,14 @@ The application consists of three main components:
 
 ## Getting Started
 
+
+### Certificates
 To get started with development, ensure you have trusted HTTPS certificates:
 
 ```bash
 dotnet dev-certs https --trust
 ```
+
+### Rider Project Setup
+Select the Ladral.Todo.WebApp and Ladral.ToDo.Api projects and then right-click and select "Run Multiple Projects" to run BFF with hosted client application together with the API backend.
+
