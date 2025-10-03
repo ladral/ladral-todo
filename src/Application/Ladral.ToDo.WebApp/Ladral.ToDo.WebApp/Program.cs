@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Ladral.ToDo.WebApp.Client.Weather;
 using Ladral.ToDo.WebApp.Components;
 using Ladral.ToDo.WebApp.Services;
@@ -48,32 +49,29 @@ builder.Services.AddAuthentication(options =>
         {
             OnTokenValidated = context =>
             {
-                var identity = context.Principal?.Identity as System.Security.Claims.ClaimsIdentity;
+                if (context.Principal?.Identity is not ClaimsIdentity identity) return Task.CompletedTask;                 
+               
+                var logger = context.HttpContext.RequestServices.GetService<ILogger<Program>>();
                 
-                if (identity != null)
+                // Ensure a subject claim is available
+                var subClaim = identity.FindFirst("sub");
+                if (subClaim == null)
                 {
-                    var logger = context.HttpContext.RequestServices.GetService<ILogger<Program>>();
-                    
-                    // Ensure we have a sub claim
-                    var subClaim = identity.FindFirst("sub");
-                    if (subClaim == null)
-                    {
-                        logger?.LogWarning("No 'sub' claim found in token");
-                    }
-                    
-                    // Ensure we have a name claim
-                    var nameClaim = identity.FindFirst("name");
-                    if (nameClaim == null)
-                    {
-                        // Try to find alternative name claims
-                        var preferredUsername = identity.FindFirst("preferred_username")?.Value;
-                        var email = identity.FindFirst("email")?.Value;
-                        var nameValue = preferredUsername ?? email ?? "Unknown User";
-                        identity.AddClaim(new System.Security.Claims.Claim("name", nameValue));
-                        logger?.LogInformation($"Added name claim: {nameValue}");
-                    }
+                    logger?.LogWarning("No 'sub' claim found in token");
                 }
-                
+                    
+                // Ensure a name claim is available
+                var nameClaim = identity.FindFirst("name");
+                if (nameClaim == null)
+                {
+                    // Try to find alternative name claims
+                    var preferredUsername = identity.FindFirst("preferred_username")?.Value;
+                    var email = identity.FindFirst("email")?.Value;
+                    var nameValue = preferredUsername ?? email ?? "Unknown User";
+                    identity.AddClaim(new System.Security.Claims.Claim("name", nameValue));
+                    logger?.LogDebug($"Added name claim: {nameValue}");
+                }
+
                 return Task.CompletedTask;
             }
         };
