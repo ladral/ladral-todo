@@ -47,6 +47,7 @@ internal sealed class CookieOidcRefresher(IOptionsMonitor<OpenIdConnectOptions> 
                 ["client_id"] = oidcOptions.ClientId,
                 ["client_secret"] = oidcOptions.ClientSecret,
                 ["scope"] = string.Join(" ", oidcOptions.Scope),
+                ["resource"] = oidcOptions.Resource,
                 ["refresh_token"] = validateContext.Properties.GetTokenValue("refresh_token"),
             }));
 

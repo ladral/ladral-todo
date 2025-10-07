@@ -31,7 +31,8 @@ builder.Services.AddAuthentication(options =>
         oidcOptions.Authority = builder.Configuration["Authentication:Authority"];
         oidcOptions.ClientId = builder.Configuration["Authentication:ClientId"];
         oidcOptions.ClientSecret = builder.Configuration["Authentication:ClientSecret"];
-        
+        oidcOptions.Resource = builder.Configuration["Authentication:Audience"];
+        oidcOptions.Prompt = "consent"; // required to retrieve refresh-token from Logto
         oidcOptions.ResponseType = OpenIdConnectResponseType.Code;
         oidcOptions.SaveTokens = true;
         oidcOptions.GetClaimsFromUserInfoEndpoint = false;
@@ -39,14 +40,24 @@ builder.Services.AddAuthentication(options =>
         oidcOptions.Scope.Clear();
         oidcOptions.Scope.Add("openid");
         oidcOptions.Scope.Add("profile");
-        oidcOptions.Scope.Add("api.todo");
-
+        oidcOptions.Scope.Add("read:todo");
+        oidcOptions.Scope.Add("write:todo");
         oidcOptions.MapInboundClaims = false;
         oidcOptions.TokenValidationParameters.NameClaimType = "name";
         oidcOptions.TokenValidationParameters.RoleClaimType = "role";
         
         oidcOptions.Events = new OpenIdConnectEvents
         {
+            OnAuthorizationCodeReceived = context =>
+            {
+                // Ensure the resource parameter is included in the token request
+                // this is required by Logto to issue a self-contained jwt token for API resources
+                if (!string.IsNullOrEmpty(context.Options.Resource))
+                {
+                    context.TokenEndpointRequest.Resource = context.Options.Resource;
+                }
+                return Task.CompletedTask;
+            },
             OnTokenValidated = context =>
             {
                 if (context.Principal?.Identity is not ClaimsIdentity identity) return Task.CompletedTask;                 
