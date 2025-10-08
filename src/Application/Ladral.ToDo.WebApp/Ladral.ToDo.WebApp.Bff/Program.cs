@@ -1,6 +1,6 @@
 using System.Security.Claims;
 using Ladral.ToDo.WebApp.Client.Weather;
-using Ladral.ToDo.WebApp.Components;
+using Ladral.ToDo.WebApp.Bff.Components;
 using Ladral.ToDo.WebApp.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
