@@ -1,8 +1,9 @@
 ﻿using System.Security.Claims;
+using Ladral.ToDo.WebApp.Bff.Configuration.Options;
 using Ladral.ToDo.WebApp.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
-using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using CookieOptions = Ladral.ToDo.WebApp.Bff.Configuration.Options.CookieOptions;
 
 namespace Ladral.ToDo.WebApp.Bff.Configuration;
 
@@ -10,25 +11,22 @@ public static class AuthenticationConfiguration
 {
     public static IServiceCollection AddAuthenticationServices(this IServiceCollection services, IConfiguration configuration)
     {
+        
+        var authenticationOptions = configuration.GetSection(AuthenticationOptions.SectionName).Get<AuthenticationOptions>();
+        
         services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
             })
-            .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
+            .AddCookie(options =>
             {
-                options.Cookie.Name = ".Ladral.ToDo.Auth";
-                options.Cookie.HttpOnly = true;
-                options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-                options.Cookie.SameSite = SameSiteMode.Lax;
-                options.ExpireTimeSpan = TimeSpan.FromHours(1);
-                options.SlidingExpiration = true;
-                options.LoginPath = "/login";
-                options.LogoutPath = "/logout";
+                ConfigureCookieOptions(options, authenticationOptions.Cookie);
+
             })
-            .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, oidcOptions =>
+            .AddOpenIdConnect(oidcOptions =>
             {
-                ConfigureOpenIdConnect(oidcOptions, configuration);
+                ConfigureOpenIdConnect(oidcOptions, authenticationOptions);
             });
 
         // ConfigureCookieOidc attaches a cookie OnValidatePrincipal callback to get
@@ -41,30 +39,43 @@ public static class AuthenticationConfiguration
 
         return services;
     }
-
-    private static void ConfigureOpenIdConnect(OpenIdConnectOptions oidcOptions, IConfiguration configuration)
+    
+    
+    private static void ConfigureCookieOptions(CookieAuthenticationOptions cookieOptions, CookieOptions configOptions)
     {
-        oidcOptions.Authority = configuration["Authentication:Authority"];
-        oidcOptions.ClientId = configuration["Authentication:ClientId"];
-        oidcOptions.ClientSecret = configuration["Authentication:ClientSecret"];
-        oidcOptions.Resource = configuration["Authentication:Audience"];
-        oidcOptions.Prompt = "consent";
-        oidcOptions.ResponseType = OpenIdConnectResponseType.Code;
+        cookieOptions.Cookie.Name = configOptions.Name;
+        cookieOptions.Cookie.HttpOnly = true;
+        cookieOptions.Cookie.SecurePolicy = CookieSecurePolicy.Always;
+        cookieOptions.Cookie.SameSite = SameSiteMode.Lax;
+        cookieOptions.ExpireTimeSpan = TimeSpan.FromHours(1);
+        cookieOptions.SlidingExpiration = true;
+        cookieOptions.LoginPath = configOptions.LoginPath;
+        cookieOptions.LogoutPath = configOptions.LogoutPath;
+    }
+
+    private static void ConfigureOpenIdConnect(OpenIdConnectOptions oidcOptions, AuthenticationOptions authOptions)
+    {
+        oidcOptions.Authority = authOptions.Authority;
+        oidcOptions.ClientId = authOptions.ClientId;
+        oidcOptions.ClientSecret = authOptions.ClientSecret;
+        oidcOptions.Resource = authOptions.Audience;
+        oidcOptions.Prompt = authOptions.OpenIdConnectConfiguration.Prompt;
+        oidcOptions.ResponseType = authOptions.OpenIdConnectConfiguration.ResponseType;
         oidcOptions.SaveTokens = true;
         oidcOptions.GetClaimsFromUserInfoEndpoint = false;
         
-        ConfigureScopes(oidcOptions);
+        ConfigureScopes(oidcOptions, authOptions.OpenIdConnectConfiguration.Scopes);
         ConfigureClaimMappings(oidcOptions);
         ConfigureEvents(oidcOptions);
     }
 
-    private static void ConfigureScopes(OpenIdConnectOptions oidcOptions)
+    private static void ConfigureScopes(OpenIdConnectOptions oidcOptions, List<string> scopes)
     {
         oidcOptions.Scope.Clear();
-        oidcOptions.Scope.Add("openid");
-        oidcOptions.Scope.Add("profile");
-        oidcOptions.Scope.Add("read:todo");
-        oidcOptions.Scope.Add("write:todo");
+        foreach (var scope in scopes)
+        {
+            oidcOptions.Scope.Add(scope);
+        }
     }
 
     private static void ConfigureClaimMappings(OpenIdConnectOptions oidcOptions)
