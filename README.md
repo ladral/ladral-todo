@@ -40,5 +40,5 @@ dotnet dev-certs https --trust
 ```
 
 ### Rider Project Setup
-Select the Ladral.Todo.WebApp and Ladral.ToDo.Api projects and then right-click and select "Run Multiple Projects" to run BFF with the hosted client application together with the API backend.
+Select the Ladral.Todo.WebApp.Bff and Ladral.ToDo.Api projects and then right-click and select "Run Multiple Projects" to run BFF with the hosted client application together with the API backend.
 
