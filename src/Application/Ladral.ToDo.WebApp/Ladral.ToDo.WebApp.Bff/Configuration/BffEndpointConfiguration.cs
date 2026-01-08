@@ -20,8 +20,8 @@ public static class BffEndpointConfiguration
             
             return Results.Ok(new
             {
-                Name = context.User.Identity.Name,
-                IsAuthenticated = context.User.Identity.IsAuthenticated,
+                Name = context.User.Identity?.Name,
+                IsAuthenticated = context.User.Identity?.IsAuthenticated,
                 Claims = context.User.Claims.Select(c => new { c.Type, c.Value })
             });
         }).RequireAuthorization();

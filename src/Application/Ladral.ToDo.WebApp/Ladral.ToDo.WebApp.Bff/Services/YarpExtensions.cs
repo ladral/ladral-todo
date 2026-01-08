@@ -23,7 +23,7 @@ public static class YarpExtensions
         builderContext.AddRequestTransform(async transformContext =>
         {
             var httpContext = transformContext.HttpContext;
-            if (httpContext.User?.Identity?.IsAuthenticated == true)
+            if (httpContext.User.Identity?.IsAuthenticated == true)
             {
                 try
                 {
