@@ -1,12 +1,10 @@
-using Ladral.ToDo.WebApp.Client.Pages;
-using Ladral.ToDo.WebApp.Components;
+using Ladral.ToDo.WebApp.Bff.Components;
+using Ladral.ToDo.WebApp.Bff.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents()
-    .AddInteractiveWebAssemblyComponents();
+// Add all services
+builder.Services.AddWebAppServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -18,18 +16,25 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-
 app.UseStaticFiles();
+
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseAntiforgery();
 
+// Configure Blazor
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(Ladral.ToDo.WebApp.Client._Imports).Assembly);
+
+
+// Configure BFF endpoints
+app.MapBffEndpoints();
+app.MapReverseProxy();
 
 app.Run();

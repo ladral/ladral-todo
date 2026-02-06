@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass:watch": "sass --watch Ladral.ToDo.WebApp:Ladral.ToDo.WebApp",
-    "sass:build": "sass Ladral.ToDo.WebApp:Ladral.ToDo.WebApp"
+    "sass:watch": "sass --watch ./:./",
+    "sass:build": "sass ./:./"
   },
   "author": "ladral",
   "dependencies": {
