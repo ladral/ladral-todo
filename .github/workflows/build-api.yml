@@ -24,20 +24,7 @@ jobs:
           git config --global user.name "GitHub Actions"
           
       - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          
-      - name: Install npm dependencies
-        run: npm install
-        working-directory: ./src/Application/Ladral.ToDo.WebApp
-        
-      - name: Compile sass files
-        run: npm run sass:build
-        working-directory: ./src/Application/Ladral.ToDo.WebApp        
+        uses: actions/checkout@v4       
       
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4.0.1
@@ -49,12 +36,12 @@ jobs:
           NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
 
       - name: Install dependencies
-        run: dotnet restore ./src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.Bff/Ladral.ToDo.WebApp.Bff.csproj
+        run: dotnet restore ./src/Application/Ladral.ToDo.Api/Ladral.ToDo.Api.csproj
         env:
           NUGET_AUTH_TOKEN: ${{ github.token }}
 
       - name: Build
-        run: dotnet publish ./src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.Bff/Ladral.ToDo.WebApp.Bff.csproj --configuration Release -r linux-x64
+        run: dotnet publish ./src/Application/Ladral.ToDo.Api/Ladral.ToDo.Api.csproj --configuration Release -r linux-x64
 
       - name: Test
         run: dotnet test ./src/Ladral.ToDo.sln --no-restore --verbosity normal
@@ -71,13 +58,13 @@ jobs:
       # Push files to the "deploy" branch
       - name: Deploy
         run: |
-          git clone --depth 1 --single-branch -b deploy-webapp git@github.com:${{ github.repository }}.git deploy-webapp
-          mv deploy-webapp/.git deploy-webapp-.git
-          rm -rf deploy-webapp
-          mkdir deploy-webapp
-          mv deploy-webapp-.git deploy-webapp/.git
-          cd deploy-webapp
-          cp -R ../src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.Bff/bin/Release/net8.0/linux-x64/publish .
+          git clone --depth 1 --single-branch -b deploy-api git@github.com:${{ github.repository }}.git deploy-api
+          mv deploy-api/.git deploy-api-.git
+          rm -rf deploy-api
+          mkdir deploy-api
+          mv deploy-api-.git deploy-api/.git
+          cd deploy-api
+          cp -R ../src/Application/Ladral.ToDo.Api/bin/Release/net8.0/linux-x64/publish .
           git add .
           git diff --staged --quiet || git commit -m "relese: ${{ env.RELEASE_VERSION }}"
           git push

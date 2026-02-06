@@ -11,23 +11,15 @@ public static class AuthenticationConfiguration
 {
     public static IServiceCollection AddAuthenticationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        
         var authenticationOptions = configuration.GetSection(AuthenticationOptions.SectionName).Get<AuthenticationOptions>();
-        
+
         services.AddAuthentication(options =>
             {
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
             })
-            .AddCookie(options =>
-            {
-                ConfigureCookieOptions(options, authenticationOptions.Cookie);
-
-            })
-            .AddOpenIdConnect(oidcOptions =>
-            {
-                ConfigureOpenIdConnect(oidcOptions, authenticationOptions);
-            });
+            .AddCookie(options => { ConfigureCookieOptions(options, authenticationOptions.Cookie); })
+            .AddOpenIdConnect(oidcOptions => { ConfigureOpenIdConnect(oidcOptions, authenticationOptions); });
 
         // ConfigureCookieOidc attaches a cookie OnValidatePrincipal callback to get
         // a new access token when the current one expires, and reissue a cookie with the
@@ -39,8 +31,8 @@ public static class AuthenticationConfiguration
 
         return services;
     }
-    
-    
+
+
     private static void ConfigureCookieOptions(CookieAuthenticationOptions cookieOptions, CookieOptions configOptions)
     {
         cookieOptions.Cookie.Name = configOptions.Name;
@@ -55,6 +47,11 @@ public static class AuthenticationConfiguration
 
     private static void ConfigureOpenIdConnect(OpenIdConnectOptions oidcOptions, AuthenticationOptions authOptions)
     {
+#if DEBUG
+        oidcOptions.RequireHttpsMetadata = false;
+#else
+        oidcOptions.RequireHttpsMetadata = true;
+#endif
         oidcOptions.Authority = authOptions.Authority;
         oidcOptions.ClientId = authOptions.ClientId;
         oidcOptions.ClientSecret = authOptions.ClientSecret;
@@ -63,7 +60,7 @@ public static class AuthenticationConfiguration
         oidcOptions.ResponseType = authOptions.OpenIdConnectConfiguration.ResponseType;
         oidcOptions.SaveTokens = true;
         oidcOptions.GetClaimsFromUserInfoEndpoint = false;
-        
+
         ConfigureScopes(oidcOptions, authOptions.OpenIdConnectConfiguration.Scopes);
         ConfigureClaimMappings(oidcOptions);
         ConfigureEvents(oidcOptions);
@@ -105,11 +102,11 @@ public static class AuthenticationConfiguration
 
     private static Task OnTokenValidated(TokenValidatedContext context)
     {
-        if (context.Principal?.Identity is not ClaimsIdentity identity) 
+        if (context.Principal?.Identity is not ClaimsIdentity identity)
             return Task.CompletedTask;
 
         var logger = context.HttpContext.RequestServices.GetService<ILogger<Program>>();
-        
+
         EnsureSubjectClaim(identity, logger);
         EnsureNameClaim(identity, logger);
 
