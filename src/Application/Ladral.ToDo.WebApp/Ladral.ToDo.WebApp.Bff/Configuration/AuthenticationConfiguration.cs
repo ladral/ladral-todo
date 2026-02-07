@@ -18,8 +18,8 @@ public static class AuthenticationConfiguration
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
             })
-            .AddCookie(options => { ConfigureCookieOptions(options, authenticationOptions.Cookie); })
-            .AddOpenIdConnect(oidcOptions => { ConfigureOpenIdConnect(oidcOptions, authenticationOptions); });
+            .AddCookie(options => { ConfigureCookieOptions(options, authenticationOptions?.Cookie!); })
+            .AddOpenIdConnect(oidcOptions => { ConfigureOpenIdConnect(oidcOptions, authenticationOptions!); });
 
         // ConfigureCookieOidc attaches a cookie OnValidatePrincipal callback to get
         // a new access token when the current one expires, and reissue a cookie with the
@@ -95,7 +95,7 @@ public static class AuthenticationConfiguration
     {
         if (!string.IsNullOrEmpty(context.Options.Resource))
         {
-            context.TokenEndpointRequest.Resource = context.Options.Resource;
+            context.TokenEndpointRequest!.Resource = context.Options.Resource;
         }
         return Task.CompletedTask;
     }
