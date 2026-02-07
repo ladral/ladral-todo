@@ -54,7 +54,7 @@ jobs:
           NUGET_AUTH_TOKEN: ${{ github.token }}
 
       - name: Build
-        run: dotnet publish ./src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.Bff/Ladral.ToDo.WebApp.Bff.csproj --configuration Release -r linux-x64 --no-restore
+        run: dotnet publish ./src/Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.Bff/Ladral.ToDo.WebApp.Bff.csproj --configuration Release -r linux-x64
 
       - name: Test
         run: dotnet test ./src/Ladral.ToDo.sln --no-restore --verbosity normal
