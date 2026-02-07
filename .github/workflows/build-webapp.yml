@@ -49,7 +49,7 @@ jobs:
           NUGET_AUTH_TOKEN: '%NUGET_AUTH_TOKEN%'
 
       - name: Install dependencies
-        run: dotnet restore ./src/Ladral.ToDo.sln
+        run: dotnet restore ./src/Ladral.ToDo.sln -r linux-x64
         env:
           NUGET_AUTH_TOKEN: ${{ github.token }}
 
