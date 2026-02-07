@@ -27,9 +27,9 @@ jobs:
         uses: actions/checkout@v4       
       
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v4.0.1
+        uses: actions/setup-dotnet@v5.1.0
         with:
-          dotnet-version: 8.0.404
+          dotnet-version: 8.0.417
           # Authenticates packages to push to GPR
           source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
         env:
