@@ -10,89 +10,89 @@
       "Ladral.ToDo.WebApp.Bff/1.0.0": {
         "dependencies": {
           "Ladral.ToDo.WebApp.Client": "1.0.0",
-          "Microsoft.AspNetCore.Authentication.OpenIdConnect": "8.0.19",
-          "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.19",
-          "Yarp.ReverseProxy": "2.1.0"
+          "Microsoft.AspNetCore.Authentication.OpenIdConnect": "8.0.28",
+          "Microsoft.AspNetCore.Components.WebAssembly.Server": "8.0.28",
+          "Yarp.ReverseProxy": "2.3.0"
         },
         "runtime": {
           "Ladral.ToDo.WebApp.Bff.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Authentication.OpenIdConnect/8.0.19": {
+      "Microsoft.AspNetCore.Authentication.OpenIdConnect/8.0.28": {
         "dependencies": {
           "Microsoft.IdentityModel.Protocols.OpenIdConnect": "7.1.2"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll": {
-            "assemblyVersion": "8.0.19.0",
-            "fileVersion": "8.0.1925.37204"
+            "assemblyVersion": "8.0.28.0",
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
-      "Microsoft.AspNetCore.Authorization/8.0.19": {
+      "Microsoft.AspNetCore.Authorization/8.0.28": {
         "dependencies": {
-          "Microsoft.AspNetCore.Metadata": "8.0.19",
+          "Microsoft.AspNetCore.Metadata": "8.0.28",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.3",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Authorization.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1925.37204"
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
-      "Microsoft.AspNetCore.Components/8.0.19": {
+      "Microsoft.AspNetCore.Components/8.0.28": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "8.0.19"
+          "Microsoft.AspNetCore.Authorization": "8.0.28"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Components.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1925.37204"
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Authorization/8.0.19": {
+      "Microsoft.AspNetCore.Components.Authorization/8.0.28": {
         "dependencies": {
-          "Microsoft.AspNetCore.Authorization": "8.0.19",
-          "Microsoft.AspNetCore.Components": "8.0.19"
+          "Microsoft.AspNetCore.Authorization": "8.0.28",
+          "Microsoft.AspNetCore.Components": "8.0.28"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Components.Authorization.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1925.37204"
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Forms/8.0.19": {
+      "Microsoft.AspNetCore.Components.Forms/8.0.28": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "8.0.19"
+          "Microsoft.AspNetCore.Components": "8.0.28"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Components.Forms.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1925.37204"
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
-      "Microsoft.AspNetCore.Components.Web/8.0.19": {
+      "Microsoft.AspNetCore.Components.Web/8.0.28": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components": "8.0.19",
-          "Microsoft.AspNetCore.Components.Forms": "8.0.19",
+          "Microsoft.AspNetCore.Components": "8.0.28",
+          "Microsoft.AspNetCore.Components.Forms": "8.0.28",
           "Microsoft.Extensions.DependencyInjection": "8.0.1",
-          "Microsoft.JSInterop": "8.0.19"
+          "Microsoft.JSInterop": "8.0.28"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Components.Web.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1925.37204"
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
       "Microsoft.AspNetCore.Components.WebAssembly/8.0.19": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components.Web": "8.0.19",
+          "Microsoft.AspNetCore.Components.Web": "8.0.28",
           "Microsoft.Extensions.Configuration.Binder": "8.0.2",
           "Microsoft.Extensions.Configuration.Json": "8.0.1",
           "Microsoft.Extensions.Logging": "8.0.1",
@@ -105,31 +105,31 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Components.WebAssembly.Authentication/8.0.19": {
+      "Microsoft.AspNetCore.Components.WebAssembly.Authentication/8.0.28": {
         "dependencies": {
-          "Microsoft.AspNetCore.Components.Authorization": "8.0.19",
-          "Microsoft.AspNetCore.Components.Web": "8.0.19"
+          "Microsoft.AspNetCore.Components.Authorization": "8.0.28",
+          "Microsoft.AspNetCore.Components.Web": "8.0.28"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Components.WebAssembly.Authentication.dll": {
-            "assemblyVersion": "8.0.19.0",
-            "fileVersion": "8.0.1925.37204"
+            "assemblyVersion": "8.0.28.0",
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
-      "Microsoft.AspNetCore.Components.WebAssembly.Server/8.0.19": {
+      "Microsoft.AspNetCore.Components.WebAssembly.Server/8.0.28": {
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Components.WebAssembly.Server.dll": {
-            "assemblyVersion": "8.0.19.0",
-            "fileVersion": "8.0.1925.37204"
+            "assemblyVersion": "8.0.28.0",
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
-      "Microsoft.AspNetCore.Metadata/8.0.19": {
+      "Microsoft.AspNetCore.Metadata/8.0.28": {
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Metadata.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1925.37204"
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
@@ -317,17 +317,17 @@
           }
         }
       },
-      "Microsoft.JSInterop/8.0.19": {
+      "Microsoft.JSInterop/8.0.28": {
         "runtime": {
           "lib/net8.0/Microsoft.JSInterop.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.1925.37204"
+            "fileVersion": "8.0.2826.26913"
           }
         }
       },
       "Microsoft.JSInterop.WebAssembly/8.0.19": {
         "dependencies": {
-          "Microsoft.JSInterop": "8.0.19"
+          "Microsoft.JSInterop": "8.0.28"
         },
         "runtime": {
           "lib/net8.0/Microsoft.JSInterop.WebAssembly.dll": {
@@ -348,29 +348,29 @@
           }
         }
       },
-      "System.IO.Hashing/7.0.0": {
+      "System.IO.Hashing/8.0.0": {
         "runtime": {
-          "lib/net7.0/System.IO.Hashing.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.22.51805"
+          "lib/net8.0/System.IO.Hashing.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
           }
         }
       },
-      "Yarp.ReverseProxy/2.1.0": {
+      "Yarp.ReverseProxy/2.3.0": {
         "dependencies": {
-          "System.IO.Hashing": "7.0.0"
+          "System.IO.Hashing": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/Yarp.ReverseProxy.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.100.23.56701"
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.300.25.12702"
           }
         }
       },
       "Ladral.ToDo.WebApp.Client/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.19",
-          "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.19",
+          "Microsoft.AspNetCore.Components.WebAssembly.Authentication": "8.0.28",
           "Microsoft.Extensions.Http": "8.0.1"
         },
         "runtime": {
@@ -388,47 +388,47 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Microsoft.AspNetCore.Authentication.OpenIdConnect/8.0.19": {
+    "Microsoft.AspNetCore.Authentication.OpenIdConnect/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xkQIOQ4UakMpL6+8miEId7xbg174Ebzac1nKkPqyFoLCyX2gOU7UDrU9Fu3poKjpWVfau+81K3xsorLnOo70rg==",
-      "path": "microsoft.aspnetcore.authentication.openidconnect/8.0.19",
-      "hashPath": "microsoft.aspnetcore.authentication.openidconnect.8.0.19.nupkg.sha512"
+      "sha512": "sha512-i7N6lsITu0FVLGXnLPrVxmLhFGoZogQOALWkWjBWmhrCcH141pUCP2KcCvaph5OASz3ds5xw/XiDotwhCvuf0g==",
+      "path": "microsoft.aspnetcore.authentication.openidconnect/8.0.28",
+      "hashPath": "microsoft.aspnetcore.authentication.openidconnect.8.0.28.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Authorization/8.0.19": {
+    "Microsoft.AspNetCore.Authorization/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jgpLESu9TKzd4+X4odAAMsac5I2OjP1WHy0tJQm7dlXA8267gsxyv9zR9iDjxQRdjp1zOhkQ+AIAAloYvq3R7g==",
-      "path": "microsoft.aspnetcore.authorization/8.0.19",
-      "hashPath": "microsoft.aspnetcore.authorization.8.0.19.nupkg.sha512"
+      "sha512": "sha512-GmPOLqxrZl05wwfwYlgcpJaxt5OF2Cb9llylCZgLjoYoS53ow1SMKUxwN5ICwK+Z2ZY3h+vaGNmfFlMLnG49nA==",
+      "path": "microsoft.aspnetcore.authorization/8.0.28",
+      "hashPath": "microsoft.aspnetcore.authorization.8.0.28.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components/8.0.19": {
+    "Microsoft.AspNetCore.Components/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SkzMM0ltMdx3il71/cmo7QWtIILsGDnowVJCg0omtF9SJPQhiHbfWzEGs3+s5kXNQMbApi4tO74tqCKyYWFJGA==",
-      "path": "microsoft.aspnetcore.components/8.0.19",
-      "hashPath": "microsoft.aspnetcore.components.8.0.19.nupkg.sha512"
+      "sha512": "sha512-plu56CQv1VXVAy3fTSK/TuZCd2E+lVY3U+VDSaAKtoikpdfzc1TiEXfkhfqG3pzTIUE79Hx1Nj+z6KJunHQBnw==",
+      "path": "microsoft.aspnetcore.components/8.0.28",
+      "hashPath": "microsoft.aspnetcore.components.8.0.28.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Authorization/8.0.19": {
+    "Microsoft.AspNetCore.Components.Authorization/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-74XJBhno4SEyIiH8T4VLwLH32EAIwoZB/onJaUXSdfFqDZFMkS89gtNtyg4GtSDGNF38cHFzCOw40YPBlasp+A==",
-      "path": "microsoft.aspnetcore.components.authorization/8.0.19",
-      "hashPath": "microsoft.aspnetcore.components.authorization.8.0.19.nupkg.sha512"
+      "sha512": "sha512-btxY3izvhCbOOOd5ULCMx5TZf7ZPrwihgpMKy+LI6HdDFGcLzX3gb3YQdL2oY42W5fDXTSU6tMfiU48tHH2zqw==",
+      "path": "microsoft.aspnetcore.components.authorization/8.0.28",
+      "hashPath": "microsoft.aspnetcore.components.authorization.8.0.28.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Forms/8.0.19": {
+    "Microsoft.AspNetCore.Components.Forms/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-77zXqGgneGoz23+Nw3GTIYJ+DFjFdpaTTdakBoK1T+m9CnKrxqpCTNUj80UFumSlHqwZ6Sq97joAP6DH2ZzTmA==",
-      "path": "microsoft.aspnetcore.components.forms/8.0.19",
-      "hashPath": "microsoft.aspnetcore.components.forms.8.0.19.nupkg.sha512"
+      "sha512": "sha512-ee69YO6zFoPxEwhQTMAY4S9zCqhZ3ApFC2EO4Z0nkxXfYfpZyiAJ0aEoeBohQ98V7P/NjrCeKLm4Qi3OTNHeFA==",
+      "path": "microsoft.aspnetcore.components.forms/8.0.28",
+      "hashPath": "microsoft.aspnetcore.components.forms.8.0.28.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Web/8.0.19": {
+    "Microsoft.AspNetCore.Components.Web/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jdHEJ4CGu/NeP5o+AugElmqSrw0oi4lD+tSjyX8LXyS3xrZmOWeFRA5rvBx3+XAXlevKyQNa+sCPlYCAM9KO4g==",
-      "path": "microsoft.aspnetcore.components.web/8.0.19",
-      "hashPath": "microsoft.aspnetcore.components.web.8.0.19.nupkg.sha512"
+      "sha512": "sha512-bOh9RcuyODA+UjGB+yt93EQKIxpqMb2h8JQclnmIVDkXH8vmpai35ypaCcQEcH8z+GIWfujMhlF/qdQarvWpOQ==",
+      "path": "microsoft.aspnetcore.components.web/8.0.28",
+      "hashPath": "microsoft.aspnetcore.components.web.8.0.28.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.WebAssembly/8.0.19": {
       "type": "package",
@@ -437,26 +437,26 @@
       "path": "microsoft.aspnetcore.components.webassembly/8.0.19",
       "hashPath": "microsoft.aspnetcore.components.webassembly.8.0.19.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.WebAssembly.Authentication/8.0.19": {
+    "Microsoft.AspNetCore.Components.WebAssembly.Authentication/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Q+/rvv/1hW+kOmPlHe2pJ1Pg8vY7q8BRaoUQbXOuZ3ghOJ+9DdLkaT/yb6bLQfiW4wkwfNTV5Cd8JFQBDH4nPw==",
-      "path": "microsoft.aspnetcore.components.webassembly.authentication/8.0.19",
-      "hashPath": "microsoft.aspnetcore.components.webassembly.authentication.8.0.19.nupkg.sha512"
+      "sha512": "sha512-WchesOG2G+jDm7rk8a7qNKISH2EqYYYLjMlZfJLo+6qtqUOwWRZxxnKYfDhTHQ3AX2TBP4azMmfFWp31TDVPEQ==",
+      "path": "microsoft.aspnetcore.components.webassembly.authentication/8.0.28",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.authentication.8.0.28.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.WebAssembly.Server/8.0.19": {
+    "Microsoft.AspNetCore.Components.WebAssembly.Server/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-T2d329YnRuOBDi4hsjiMOdcB7oX9yg6Be6Litzt+jGrjSoV402hHfS+mTCYdMb8LD957N+R8fpfeQ6uBOerKQg==",
-      "path": "microsoft.aspnetcore.components.webassembly.server/8.0.19",
-      "hashPath": "microsoft.aspnetcore.components.webassembly.server.8.0.19.nupkg.sha512"
+      "sha512": "sha512-isHQrsUGmRzlnTRz5HWXqtjvI2sDHZQTF1QlMGomjp9UPt3Pe0k5boxKSfIF3icMHtnlm6A/XbVkHy8U4qh9Ww==",
+      "path": "microsoft.aspnetcore.components.webassembly.server/8.0.28",
+      "hashPath": "microsoft.aspnetcore.components.webassembly.server.8.0.28.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Metadata/8.0.19": {
+    "Microsoft.AspNetCore.Metadata/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-8FnZh1Tv+Au+3LNyOTy9D+q5XOpIs9RSVcv8tPnKZsFl8rgj/RkaCbT4Bctb07t8Y3f6mzBYCDuug1nyAgR7tQ==",
-      "path": "microsoft.aspnetcore.metadata/8.0.19",
-      "hashPath": "microsoft.aspnetcore.metadata.8.0.19.nupkg.sha512"
+      "sha512": "sha512-mhdcxZEO5AzXWVKiMxedNP6g4ie/Odf0ZG1rcx+CS/3ihiLGoV8lS2NRQZ8qKIHFjmhjx2BkW4BUvGqVpI+jpQ==",
+      "path": "microsoft.aspnetcore.metadata/8.0.28",
+      "hashPath": "microsoft.aspnetcore.metadata.8.0.28.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Binder/8.0.2": {
       "type": "package",
@@ -577,12 +577,12 @@
       "path": "microsoft.identitymodel.tokens/7.1.2",
       "hashPath": "microsoft.identitymodel.tokens.7.1.2.nupkg.sha512"
     },
-    "Microsoft.JSInterop/8.0.19": {
+    "Microsoft.JSInterop/8.0.28": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-s7x96fUvYC1Rfe55G+YtkDJEppnYzwaXKKnTnI44hyiM+c1iRQGpJ+TnoA+Hti+d9PuXQY+0vXnDcUECLkj2Ew==",
-      "path": "microsoft.jsinterop/8.0.19",
-      "hashPath": "microsoft.jsinterop.8.0.19.nupkg.sha512"
+      "sha512": "sha512-Q+dcjkPI8/szT0CK2mhujICExtFbhw/SvdYDru6pXJ5KokehjFbSMDc8CysFVNXHXSOJKkiNgTBMfbyf1KmKxQ==",
+      "path": "microsoft.jsinterop/8.0.28",
+      "hashPath": "microsoft.jsinterop.8.0.28.nupkg.sha512"
     },
     "Microsoft.JSInterop.WebAssembly/8.0.19": {
       "type": "package",
@@ -598,19 +598,19 @@
       "path": "system.identitymodel.tokens.jwt/7.1.2",
       "hashPath": "system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512"
     },
-    "System.IO.Hashing/7.0.0": {
+    "System.IO.Hashing/8.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sDnWM0N3AMCa86LrKTWeF3BZLD2sgWyYUc7HL6z4+xyDZNQRwzmxbo4qP2rX2MqC+Sy1/gOSRDah5ltxY5jPxw==",
-      "path": "system.io.hashing/7.0.0",
-      "hashPath": "system.io.hashing.7.0.0.nupkg.sha512"
+      "sha512": "sha512-ne1843evDugl0md7Fjzy6QjJrzsjh46ZKbhf8GwBXb5f/gw97J4bxMs0NQKifDuThh/f0bZ0e62NPl1jzTuRqA==",
+      "path": "system.io.hashing/8.0.0",
+      "hashPath": "system.io.hashing.8.0.0.nupkg.sha512"
     },
-    "Yarp.ReverseProxy/2.1.0": {
+    "Yarp.ReverseProxy/2.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VgRuCBxmh5ND4VuFhvIN3AAeoxFhYkS2hNINk6AVCrOVTlpk7OwdrTXi8NHACfqfhDL+/oYCZrF9RxN+yiYnEg==",
-      "path": "yarp.reverseproxy/2.1.0",
-      "hashPath": "yarp.reverseproxy.2.1.0.nupkg.sha512"
+      "sha512": "sha512-gxtkN3a+9biu9V9Zd5NaTO6VZWXAnS2mhQ0R/VXmSPoTuiQNZsakKikrKpDtKxrL5nUYzbRsHtl40WNq+ZBKKg==",
+      "path": "yarp.reverseproxy/2.3.0",
+      "hashPath": "yarp.reverseproxy.2.3.0.nupkg.sha512"
     },
     "Ladral.ToDo.WebApp.Client/1.0.0": {
       "type": "project",
