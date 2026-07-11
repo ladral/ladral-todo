@@ -30,6 +30,7 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseForwardedHeaders();
 
 app.UseAuthentication();
 app.UseAuthorization();
