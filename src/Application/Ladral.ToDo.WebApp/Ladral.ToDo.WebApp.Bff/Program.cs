@@ -1,10 +1,19 @@
 using Ladral.ToDo.WebApp.Bff.Components;
 using Ladral.ToDo.WebApp.Bff.Configuration;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add all services
 builder.Services.AddWebAppServices(builder.Configuration);
+
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedProto |
+        ForwardedHeaders.XForwardedHost;
+});
 
 var app = builder.Build();
 
