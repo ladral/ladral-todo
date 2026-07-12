@@ -1,8 +1,10 @@
 using Ladral.ToDo.WebApp.Bff.Components;
 using Ladral.ToDo.WebApp.Bff.Configuration;
+using Ladral.ToDo.Configuration.Logging;
 using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.AddSerilogLogging();
 
 // Add all services
 builder.Services.AddWebAppServices(builder.Configuration);

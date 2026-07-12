@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Ladral.ToDo.WebApp.Client\Ladral.ToDo.WebApp.Client.csproj"/>
+        <ProjectReference Include="..\Ladral.ToDo.WebApp.Client\Ladral.ToDo.WebApp.Client.csproj" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.28" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.28" />
         <PackageReference Include="Yarp.ReverseProxy" Version="2.3.0" />
@@ -17,6 +17,10 @@
       <Content Include="..\..\..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Common\Ladral.ToDo.Configuration\Ladral.ToDo.Configuration.csproj" />
     </ItemGroup>
 
 
