@@ -1,12 +1,36 @@
-﻿services:
-  ladral.todo.webapp:
-    image: ladral.todo.webapp
+services:
+  webapp:
+    image: ladral-todo-webapp
     build:
       context: .
-      dockerfile: Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp/Dockerfile
+      dockerfile: Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.Bff/Dockerfile
+    ports:
+      - "${WEBAPP_PORT:-8080}:8080"
+    depends_on:
+      - api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT:-Production}
+      - Authentication__Authority=${AUTH_AUTHORITY}
+      - Authentication__ClientId=${AUTH_CLIENT_ID}
+      - Authentication__ClientSecret=${AUTH_CLIENT_SECRET}
+      - Authentication__Audience=${AUTH_AUDIENCE}
+      - ReverseProxy__Clusters__ApiCluster__Destinations__ApiDestination__Address=${API_BASE_URL:-http://api:8080}
+      - ApiEndpoints__WeatherApi=${API_BASE_URL:-http://api:8080}
+    env_file:
+      - path: .env
+        required: false
 
-  ladral.todo.webapp.client:
-    image: ladral.todo.webapp.client
+  api:
+    image: ladral-todo-api
     build:
       context: .
-      dockerfile: Application/Ladral.ToDo.WebApp/Ladral.ToDo.WebApp.Client/Dockerfile
+      dockerfile: Application/Ladral.ToDo.Api/Dockerfile
+    ports:
+      - "${API_PORT:-5226}:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT:-Production}
+      - Authentication__Authority=${AUTH_AUTHORITY}
+      - Authentication__Audience=${AUTH_AUDIENCE}
+    env_file:
+      - path: .env
+        required: false
