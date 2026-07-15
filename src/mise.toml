@@ -1,2 +1,18 @@
 [tools]
 dotnet = '8'
+
+[tasks."docker:up"]
+description = "Start the web app (without Logto IDP)"
+run = "docker compose up --build -d"
+
+[tasks."docker:up:logto"]
+description = "Start the web app with Logto IDP"
+run = "docker compose -f docker-compose.yml -f docker-compose.logto.yml up --build -d"
+
+[tasks."docker:down"]
+description = "Stop all services"
+run = "docker compose -f docker-compose.yml -f docker-compose.logto.yml down --rmi all"
+
+[tasks."docker:logs"]
+description = "Follow logs of all services"
+run = "docker compose -f docker-compose.yml -f docker-compose.logto.yml logs -f"
